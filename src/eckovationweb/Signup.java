@@ -34,11 +34,11 @@ public class Signup {
 		sel.selectByVisibleText(role);
 		fullNameTxtBx.sendKeys(name);
 		//phNumTxtBx.click();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		phNumForSignUp.sendKeys(phNum);
 		emailTxtBx.sendKeys(emailID);
 		createProfileBtn.click();

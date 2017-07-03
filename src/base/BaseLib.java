@@ -31,7 +31,7 @@ public class BaseLib {
 	@AfterMethod
    public void postCondition(){
 		driver.close();
-		System.out.println("browser closed");
+		//System.out.println("browser closed");
 	}
 	
 }

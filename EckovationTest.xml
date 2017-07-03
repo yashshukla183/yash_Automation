@@ -5,8 +5,8 @@
   <parameter name="browser" value="chrome" />
     <classes>
       
-      <class name="com.eckovation.scripts.SignUpTest"/>
-      
+      <class name="eckovationweb.SignupTest"/>
+
     </classes>
   </test>
 </suite>
