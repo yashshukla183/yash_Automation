@@ -3,25 +3,30 @@ package eckovationweb;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import base.BaseLib;
 
 public class SignupTest extends BaseLib{	
 	
-	@Test(priority=11)
-	public void signUpTest11(){
+	
+	
+	
+	
+	
+
+	@Test(priority=1)
+	public void signUpTest1(){
 		Signup sup=new Signup(driver);
 		sup.signUp("Student", "Test", "9899999895", "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+}
 		sup.submitOTP("133496");
-		System.out.println("Signup as Student with valid details");
+		System.out.println("test 1 executed ");
 
 	}
 
@@ -30,13 +35,14 @@ public class SignupTest extends BaseLib{
 		Signup sup=new Signup(driver);
 		sup.signUp("Student", "", " ", "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+	try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		sup.submitOTP("133496");
 	
+		System.out.println("test 2 executed ");
 
 	}
 	@Test(priority=3)
@@ -44,12 +50,15 @@ public class SignupTest extends BaseLib{
 		Signup sup=new Signup(driver);
 		sup.signUp("Student", "Test                     hjasj       ", "000000000000000", "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		sup.submitOTP("133496");
+		
+		System.out.println("test 3 executed");
+		
 	}
 
 
@@ -58,25 +67,31 @@ public class SignupTest extends BaseLib{
 		Signup sup=new Signup(driver);
 		sup.signUp("Student", "Test", "abcdhcbcejc", "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		sup.submitOTP("133496");
-
+		System.out.println("test4 executed");
+		
 	}
+	
 	@Test(priority=5)
 	public void signUpTest5(){
 		Signup sup=new Signup(driver);
 		sup.signUp(" ", "Test", "9899999999", "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(1000);
+	} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		sup.submitOTP("133496");
+		
+		System.out.println("test 5 executed");
+		
+		
 
 	}
 
@@ -85,12 +100,15 @@ public class SignupTest extends BaseLib{
 		Signup sup=new Signup(driver);
 		sup.signUp("Student", "Test", "989947489", "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		sup.submitOTP("133496");
+		
+		System.out.println("test6 executed");
+		
 
 	}
 
@@ -99,12 +117,14 @@ public class SignupTest extends BaseLib{
 		Signup sup=new Signup(driver);
 		sup.signUp("Student", "ABCDEF", "9899989599", "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+		try {
+		Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();		}
 		sup.submitOTP("1@3496");
+		
+		System.out.println("test 7 executed");
+		
 
 	}
 
@@ -113,12 +133,13 @@ public class SignupTest extends BaseLib{
 		Signup sup=new Signup(driver);
 		sup.signUp("Student", "Test", "8899999899", "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+	}
 		sup.submitOTP("133496");
+System.out.println("test 8 executed");
 
 	}
 	@Test(priority=9)
@@ -132,6 +153,9 @@ public class SignupTest extends BaseLib{
 //			e.printStackTrace();
 //		}
 		sup.submitOTP(" hjcbihbhi");
+		
+		System.out.println("test 9 executed");
+		
 
 	}
 
@@ -147,28 +171,30 @@ public class SignupTest extends BaseLib{
 		}
 		sup.submitOTP("133496");
 
+		System.out.println("test 10 executed");
 	}
 
-	@SuppressWarnings("unused")
-	@Test(priority=1)
-	public void signInTest1(){
-		Signup sup =new Signup(driver);
+
+	@Test(priority=11)
+	public void signUpTest(){
+		@SuppressWarnings("unused")
+		Signup sup=new Signup(driver);
+	
+	driver.findElement(By.name("tels")).sendKeys("9899061744");
+	driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+    try {
+		Thread.sleep(10000);
+	} catch (InterruptedException e) {
 		
-			driver.findElement(By.name("tels")).sendKeys("9383103014");
-			driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
-		    try {
-				Thread.sleep(10000);
-			} catch (InterruptedException e) {
-			
-			}
-		    WebElement txt = driver.findElement(By.xpath("//div[contains(text(), 'Please sign up before you can log in.')]"));
-		    String errormsg2 = txt.getText();
-		    System.out.println(errormsg2);
-		    driver.findElement(By.xpath("(//button[@ng-click='close()'])[1]")).click();
-	
 	}
+	driver.findElement(By.id("otpNumber")).sendKeys("133496");
+driver.findElement(By.xpath("(//button[contains(text(), 'Submit')])[1]")).click();
+	driver.findElement(By.id("eck-profile-dropdown")).click();
+	driver.findElement(By.xpath("//a[@ng-click='logout()']")).click();
+    	System.out.println("test 66 executed");
+    	
 	
 	
 	
-	
+}
 }

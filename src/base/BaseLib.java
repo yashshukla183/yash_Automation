@@ -26,6 +26,7 @@ public class BaseLib {
 		driver.manage().window().maximize();
 		driver.get("http://wt.eckovation.com/");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
 	}
 	
 	@AfterMethod
