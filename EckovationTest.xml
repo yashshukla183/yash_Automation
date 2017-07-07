@@ -4,12 +4,11 @@
 	<test name="SignupTest">
 		<parameter name="browser" value="chrome" />
 		<classes>
-
-
-			
-			<class name="eckovationweb.SignupTest" />
-			<class name="eckovationweb.SignInTest" />
-
+		
+		
+			   <class name="eckovationweb.SignInTest" />
+       
 		</classes>
+
 	</test>
 </suite>

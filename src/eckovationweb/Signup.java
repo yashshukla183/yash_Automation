@@ -25,6 +25,8 @@ public class Signup {
 	private WebElement phNumForSignIn;
 	@FindBy(xpath="//button[text()='Sign in']")
 	private WebElement signInBtn;
+	@FindBy(xpath="//button[tesxt()='join group']")
+	private WebElement joingroupBtn;
 	
 	public Signup(WebDriver driver){
 		PageFactory.initElements(driver, this);
@@ -52,4 +54,8 @@ public class Signup {
 		phNumForSignIn.sendKeys(phNum);
 		signInBtn.click();
 	}
-}
+	public void ClickOnjoingroup(String gpCode){
+		joingroupBtn.click();
+	}
+	
+	}

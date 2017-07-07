@@ -9,12 +9,6 @@ import base.BaseLib;
 
 public class SignupTest extends BaseLib{	
 	
-	
-	
-	
-	
-	
-
 	@Test(priority=1)
 	public void signUpTest1(){
 		Signup sup=new Signup(driver);
@@ -26,7 +20,12 @@ public class SignupTest extends BaseLib{
 			e.printStackTrace();
 }
 		sup.submitOTP("133496");
+		
+		driver.findElement(By.xpath("//btn btn-default eck-btn-cg']")).click();
+		
+		driver.findElement(By.xpath("//btn btn-default eck-btn-cg'"));
 		System.out.println("test 1 executed ");
+		
 
 	}
 
