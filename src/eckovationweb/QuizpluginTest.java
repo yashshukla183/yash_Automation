@@ -30,6 +30,5 @@ public class QuizpluginTest extends BaseLib {
 		Assert.assertEquals((driver.findElements(By.className("title")).get(0).getText()),"Topics");
 		Assert.assertEquals((driver.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[2]/div/button/div[2]/h2")).getText()),"Java Test");
 		Assert.assertEquals(driver.findElement(By.xpath("//*[@id='sidebar-wrapper']/ul/li[1]/a")).getText(), "Quiz Plugin" );
-		Assert.assertEquals(driver.findElement(By.xpath("//*[@id='page-content-wrapper']/div[3]/div/div/div[2]/div/button/div[2]/p/text()")).getText(), "6 available tests");
 	}
 }
