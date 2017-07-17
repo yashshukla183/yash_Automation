@@ -28,12 +28,11 @@ public class BaseLib {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
-//	@AfterMethod
-//   public void postCondition(){
-//		driver.close();
-//		//System.out.println("browser closed");
-//	}
-	
+	@AfterMethod
+   public void postCondition(){
+		driver.close();
+		System.out.println("browser closed");
+	}
 }
 
 	
