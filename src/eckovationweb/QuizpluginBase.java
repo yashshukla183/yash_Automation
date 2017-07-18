@@ -26,20 +26,22 @@ public class QuizpluginBase {
 
 		driver.findElement(By.id("dashboard-join-group")).click();
 		Thread.sleep(10000);
+		System.out.println(driver.getPageSource());
 		System.out.println("join group is clicked");
-
+		Thread.sleep(10000);
 		WebElement element = (WebElement) driver.switchTo().activeElement();
+		
 		System.out.println(element.getText());
 
 		WebElement modal = driver.findElements(By.className("modal-content")).get(0);
-
+       
 		modal.findElement(By.id("gcode")).sendKeys(CONSTANT_GROUP_CODE);
 		Thread.sleep(10000);
 		modal.findElement(By.id("join-group")).click();
 		Thread.sleep(10000);
 
 		System.out.println("join group button is clicked");
-
+		System.out.println(driver.getPageSource());
 		Thread.sleep(1000);
 		driver.navigate().refresh();
 		Thread.sleep(1000);
@@ -56,7 +58,6 @@ public class QuizpluginBase {
 	}
 	
 	public void reachTest(){
-		
 		
 		System.out.println("perform test 1");
 		SignInBase signinbase = new SignInBase(driver);
