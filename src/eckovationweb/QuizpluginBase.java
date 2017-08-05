@@ -2,11 +2,20 @@ package eckovationweb;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+import com.thoughtworks.selenium.Wait;
+
 
 public class QuizpluginBase {
 
@@ -19,46 +28,75 @@ public class QuizpluginBase {
 	}
 
 	public void enterGroupCodeAndOpenQuiz() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.navigate().refresh();
-		Thread.sleep(2000);
-		System.out.println("page is refreshed ");
-
-		driver.findElement(By.id("dashboard-join-group")).click();
-		Thread.sleep(10000);
-		System.out.println(driver.getPageSource());
-		System.out.println("join group is clicked");
-		Thread.sleep(10000);
-		WebElement element = (WebElement) driver.switchTo().activeElement();
 		
-		System.out.println(element.getText());
-
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver,5);
+		WebElement joinGroup = wait.until(ExpectedConditions.elementToBeClickable(By.id("dashboard-join-group")));
+		joinGroup.click();
+		System.out.println("join group is clicked");
+//		WebElement element = (WebElement) driver.switchTo().activeElement();
+//		System.out.println(element.getText());
 		WebElement modal = driver.findElements(By.className("modal-content")).get(0);
-       
-		modal.findElement(By.id("gcode")).sendKeys(CONSTANT_GROUP_CODE);
-		Thread.sleep(10000);
+		Boolean ifFailed = false;
+		try {
+			modal.findElement(By.id("gcode")).sendKeys(CONSTANT_GROUP_CODE);
+			Thread.sleep(2000);
+			modal.findElement(By.id("join-group")).click();
+			
+		} catch (Exception e) {
+			ifFailed = true;
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e1) {
+
+			}
+		}
+		if (ifFailed == true) {
+			modal.findElement(By.id("gcode")).sendKeys(CONSTANT_GROUP_CODE);
+		}
 		modal.findElement(By.id("join-group")).click();
-		Thread.sleep(10000);
-
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e2) {
+       System.out.println("exception :" + getmessage());
+		}
+	
+        Thread.sleep(10000);
 		System.out.println("join group button is clicked");
-		System.out.println(driver.getPageSource());
-		Thread.sleep(1000);
-		driver.navigate().refresh();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		WebDriverWait wait1 = new WebDriverWait(driver,5);
+		
+		Boolean ifFailed1 = false;
+		try {
+			driver.findElements(By.className("eck-btn-cg")).get(0).click();
+		} catch (NoSuchElementException e) {
+			ifFailed = true;
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e1) {
 
-		driver.findElements(By.className("eck-btn-cg")).get(0).click();
+			}
+		}
+		if (ifFailed == true) {
+			driver.findElements(By.className("eck-btn-cg")).get(0).click();
+		}
 		WebElement pluginModal = driver.findElements(By.className("modal-dialog")).get(0);
+		pluginModal.findElements(By.className("plugin-list")).get(0).click();
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e2) {
 
-		Thread.sleep(10000);
-
-		System.out.println("going to click first plugin!");
-		pluginModal.findElements(By.className("plugin-list")).get(0).click(); // mostly error comes in this line mostly
-		System.out.println("first plugin clicked!");
-		Thread.sleep(10000);
+		}
 	}
 	
+
+	private String getmessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public void reachTest(){
-		
 		System.out.println("perform test 1");
 		SignInBase signinbase = new SignInBase(driver);
 		signinbase.clearDataAndReachTillOtp(signinbase.CORRECT_OTP);
@@ -82,11 +120,9 @@ public class QuizpluginBase {
 		.click();
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),
 				"Test 1 - NM-F,SS-F, SSU-F,SQ-F,ET-F");
-
 		System.out.println("test 1 is loaded with question 1 ");
 		
 	}
-	
 	
 	public void goToQuestionNumberAndSelectAnswer(int currentScreen, int qNo, int answer) throws InterruptedException {
 		Thread.sleep(10000);
@@ -176,7 +212,8 @@ public class QuizpluginBase {
 		}
 		
 		return totalMarks;
+		
 	 }
+	
 	}
-
 

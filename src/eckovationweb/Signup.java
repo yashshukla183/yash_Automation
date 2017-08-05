@@ -25,7 +25,7 @@ public class Signup {
 	private WebElement phNumForSignIn;
 	@FindBy(xpath="//button[text()='Sign in']")
 	private WebElement signInBtn;
-	@FindBy(xpath="//button[tesxt()='join group']")
+	@FindBy(xpath="//button[text()='join group']")
 	private WebElement joingroupBtn;
 	
 	public Signup(WebDriver driver){

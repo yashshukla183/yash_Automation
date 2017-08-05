@@ -48,7 +48,7 @@ public class SignInBase {
 
 		Signup sup = new Signup(driver);
 		sup.signUp("Student", "Test", PHONE_NUMER, "abc@gmail.com");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		try {
 			Thread.sleep(10000);
 		} catch (InterruptedException e) {
