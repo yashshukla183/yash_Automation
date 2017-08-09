@@ -20,8 +20,8 @@ import org.testng.annotations.Parameters;
 import java.net.URL;
 
 public class BaseLib {
-	  public static final String USERNAME = "yash91";
-	  public static final String AUTOMATE_KEY = "pUBxy8nJGAuzyXvhxLJd";
+	  public static final String USERNAME = "yash92";
+	  public static final String AUTOMATE_KEY = "s9dpgpQWQysyEi8c858y";
 	  public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 	
 	
@@ -46,7 +46,6 @@ public class BaseLib {
 		    caps.setCapability("browserstack.debug", "true");
 		    caps.setCapability("browserstack.console", "verbose");
 		    caps.setCapability("browserstack.networkLogs", "true");
-
 		    driver = new RemoteWebDriver(new URL(URL), caps);
 		}
 		driver.manage().window().maximize();

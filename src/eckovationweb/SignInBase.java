@@ -50,7 +50,7 @@ public class SignInBase {
 		sup.signUp("Student", "Test", PHONE_NUMER, "abc@gmail.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(20000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -90,11 +90,5 @@ public class SignInBase {
 		}
 
 		driver.findElement(By.xpath("(//button[contains(text(), 'Submit')])[1]")).click();
-
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-
-		}
 	}
 }

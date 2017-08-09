@@ -7,8 +7,11 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import base.BaseLib;
@@ -29,9 +32,11 @@ public class QuizpluginTest extends BaseLib {
 		}
 		Assert.assertEquals(driver.getTitle(), "Quiz D");
 		Assert.assertEquals((driver.findElements(By.className("title")).get(0).getText()), "Topics");
+		new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[2]/div/button/div[2]/h2")));
 		Assert.assertEquals((driver
 				.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[2]/div/button/div[2]/h2"))
 				.getText()), "Java Test");
+		
 		Assert.assertEquals(driver.findElement(By.xpath("//*[@id='sidebar-wrapper']/ul/li[1]/a")).getText(),
 				"Quiz Plugin");
 		System.out.println("first priority test is executed successfully");
