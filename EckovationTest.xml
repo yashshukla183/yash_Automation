@@ -6,7 +6,8 @@
 			<class name="eckovationweb.QuizpluginTest">
 				<parameter name="browser" value="browserstack" />
 				<methods>
-				    <include name="openQuizPluginMain" />
+					<include name="attemptOneQuestionsSixthTest" />
+					<include name="attemptEightQuestionsSixthTest" />
 				</methods>
 			</class>
 		</classes>

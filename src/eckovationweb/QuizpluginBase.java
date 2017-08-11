@@ -30,8 +30,8 @@ public class QuizpluginBase {
 	}
 
 	public void enterGroupCodeAndOpenQuiz() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		WebElement joinGroup = wait.until(ExpectedConditions.elementToBeClickable(By.id("dashboard-join-group")));
 		joinGroup.click();
 		System.out.println("join group is clicked");
@@ -131,9 +131,11 @@ public class QuizpluginBase {
 		System.out.println("window is handled ");
 		driver.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[2]/div/button/div[2]/h2"))
 		.click();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		Assert.assertEquals(driver.findElements(By.className("sub-topic-panel")).size(), 6);
 		driver.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[3]/div/div[2]/button"))
 		.click();
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),
 				"Test 1 - NM-F,SS-F, SSU-F,SQ-F,ET-F");
 		System.out.println("test 1 is loaded with question 1 ");
@@ -141,7 +143,7 @@ public class QuizpluginBase {
 	}
 
 	public void goToQuestionNumberAndSelectAnswer(int currentScreen, int qNo, int answer) throws InterruptedException {
-		Thread.sleep(10000);
+		
 
 		// answer : 0,1,2,3
 		// qNo : 0,1,2,3,4,5,6,7,8,9
