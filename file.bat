@@ -1,1 +1,1 @@
-java -cp bin; lib/* testng.TestNG EckovationTest.xml
+java -cp bin;lib/* testng.TestNG EckovationTest.xml
