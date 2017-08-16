@@ -20,8 +20,8 @@ import org.testng.annotations.Parameters;
 import java.net.URL;
 
 public class BaseLib {
-	  public static final String USERNAME = "yash105";
-	  public static final String AUTOMATE_KEY = "mh5xaXu6H7y36Dap4ztx";
+	  public static final String USERNAME = "yash106";
+	  public static final String AUTOMATE_KEY = "mhTbGuXrC7bsN7f1yV9X";
 	  public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 	
 	public WebDriver driver;
