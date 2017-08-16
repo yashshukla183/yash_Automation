@@ -83,7 +83,9 @@ public class QuizpluginTest extends BaseLib {
 		System.out.println(driver.getPageSource());
 		String firstQuestionText = driver.findElements(By.className("question-text")).get(0).getText();
 		System.out.println(firstQuestionText);
-		Assert.assertNotSame(quizbase.correctAnswerForQuestion(firstQuestionText), null);
+		
+		Thread.sleep(10000);
+		System.out.println(firstQuestionText);
 		System.out.println("test 1 is loaded with question 1 ");
 		System.out.println("Third priority test is executed successfully");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -104,7 +106,7 @@ public class QuizpluginTest extends BaseLib {
 		Assert.assertEquals(driver.findElements(By.className("sub-topic-panel")).size(), 6);
 		driver.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[3]/div/div[2]/button"))
 		.click();
-		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		Thread.sleep(5000);
 		System.out.println(driver.getPageSource());
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),"Test 1 - NM-F,SS-F, SSU-F,SQ-F,ET-F");
 		String firstQuestionText = driver.findElements(By.className("question-text")).get(0).getText();
@@ -147,7 +149,7 @@ public class QuizpluginTest extends BaseLib {
 		System.out.println("start test is clicked");
 
 		System.out.println(driver.getPageSource());
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(5000);
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),"Test 1 - NM-F,SS-F, SSU-F,SQ-F,ET-F");
 		System.out.println("test 1 is loaded with question 1 ");
 		HashMap<String, Integer> allQuestionAnswers = new HashMap<>();
@@ -186,7 +188,7 @@ public class QuizpluginTest extends BaseLib {
 		driver.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[3]/div/div[2]/button"))
 		.click();
 		System.out.println("start test is clicked");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(5000);
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),"Test 1 - NM-F,SS-F, SSU-F,SQ-F,ET-F");
 		System.out.println("test 1 is loaded with question 1 ");
 		HashMap<String, Integer> allQuestionAnswers = new HashMap<>();
@@ -232,7 +234,7 @@ public class QuizpluginTest extends BaseLib {
 		.click();
 
 		System.out.println("start test is clicked");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Thread.sleep(5000);
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),
 				"Test 1 - NM-F,SS-F, SSU-F,SQ-F,ET-F");
 
@@ -327,7 +329,7 @@ public class QuizpluginTest extends BaseLib {
 		driver.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[4]/div/div[2]/button"))
 		.click();
 		System.out.println("start test is clicked");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Thread.sleep(5000);
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),
 				"Test 2 - NM-T,SS-F, SSU-F,SQ-F,ET-F");
 		System.out.println("test 2 is loaded with question 1 ");
@@ -375,7 +377,7 @@ public class QuizpluginTest extends BaseLib {
 		.click();
 
 		System.out.println("start test is clicked");
-		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		Thread.sleep(5000);
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),
 				"Test 2 - NM-T,SS-F, SSU-F,SQ-F,ET-F");
 
@@ -431,7 +433,7 @@ public class QuizpluginTest extends BaseLib {
 
 		System.out.println("start test is clicked");
 
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),
 				"Test 2 - NM-T,SS-F, SSU-F,SQ-F,ET-F");
@@ -491,7 +493,7 @@ public class QuizpluginTest extends BaseLib {
 
 		System.out.println("start test is clicked");
 
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		Assert.assertEquals(driver.findElements(By.className("panel-title")).get(0).getText(),
 				"Test 2 - NM-T,SS-F, SSU-F,SQ-F,ET-F");
 
@@ -1107,7 +1109,8 @@ public class QuizpluginTest extends BaseLib {
 
 		System.out.println("start test is clicked");
 		Thread.sleep(10000);
-		
+		String panelText = driver.findElements(By.className("panel-title")).get(0).getText();
+		System.out.println(panelText);
 		System.out.println("test 3 is loaded with question 1 ");
 
 		HashMap<String, Integer> allQuestionAnswers = new HashMap<>();
@@ -1156,6 +1159,8 @@ public class QuizpluginTest extends BaseLib {
 		System.out.println("start test is clicked");
 		Thread.sleep(10000);
 		System.out.println("test 6 is loaded with question 1 ");
+		String panelText = driver.findElements(By.className("panel-title")).get(0).getText();
+		System.out.println(panelText);
 
 		HashMap<String, Integer> allQuestionAnswers = new HashMap<>();
 
@@ -1205,8 +1210,13 @@ public class QuizpluginTest extends BaseLib {
 
 		System.out.println("start test is clicked");
 		Thread.sleep(10000);
+		
+		String panelText = driver.findElements(By.className("panel-title")).get(0).getText();
+		System.out.println(panelText);
 		System.out.println("test 6 is loaded with question 1 ");
+
 		HashMap<String, Integer> allQuestionAnswers = new HashMap<>();
+
 		quizbase.goToQuestionNumberAndSelectAnswer(0, 2, 1);
 		String questionText = driver.findElements(By.className("question-text")).get(0).getText();
 		allQuestionAnswers.put(questionText, 1);
@@ -1248,9 +1258,7 @@ public class QuizpluginTest extends BaseLib {
 		submitModal.findElements(By.className("btn-primary")).get(0).click();
 		Thread.sleep(1000);
 		System.out.println("submit answer yes clicked");
-
 		Integer marks = quizbase.calculateTotalScore(0, 4, allQuestionAnswers);
-
 		Assert.assertEquals(driver.findElements(By.className("results-circle")).get(0).getText(), marks + "/40");
 
 		System.out.println("Total marks in test 6 is  " + marks);

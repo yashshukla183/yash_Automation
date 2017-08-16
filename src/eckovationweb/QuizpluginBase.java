@@ -30,13 +30,14 @@ public class QuizpluginBase {
 	}
 
 	public void enterGroupCodeAndOpenQuiz() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+		System.out.println(driver.getPageSource());
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		WebElement joinGroup = wait.until(ExpectedConditions.elementToBeClickable(By.id("dashboard-join-group")));
 		joinGroup.click();
+		System.out.println(joinGroup+"is found");
 		System.out.println("join group is clicked");
 		WebElement element = (WebElement) driver.switchTo().activeElement();
-		System.out.println(driver.getPageSource());
 		WebElement modal = driver.findElements(By.className("modal-content")).get(0);
 		modal.findElement(By.id("gcode")).sendKeys(CONSTANT_GROUP_CODE);
 		Boolean ifFailed = false;

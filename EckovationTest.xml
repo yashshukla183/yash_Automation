@@ -6,7 +6,30 @@
 			<class name="eckovationweb.QuizpluginTest">
 				<parameter name="browser" value="browserstack" />
 				<methods>
+					<include name="openQuizPluginMain" />
+					<include name="SelectTopicAndLoadTests" />
+					<include name="startFirstTest" />
+					<include name="AttemptAndSubmitFirstTest" />
+					<include name="attemptOneQuestionsFirstTest" />
+					<include name="attemptTwoQuestionsFirstTest" />
+					<include name="attemptEightQuestionsFirstTest" />
+					<include name="testSubmissionWithoutAnswer" />
+					<include name="attemptOneQuestionsSecondTest" />
+					<include name="attemptTwoQuestionsSecondTest" />
+					<include name="attemptThreeQuestionsSecondTest" />
+					<include name="attemptEightQuestionsSecondTest" />
+					<include name="attemptOneQuestionsThirdTest" />
+					<include name="attemptTwouestionsThirdTest" />
+					<include name="attemptEightQuestionsThirdTest" />
+					<include name="attemptOneQuestionsFourthTest" />
+					<include name="attemptTwouestionsFourthTest" />
+					<include name="attemptEightQuestionsFourthTest" />
+					<include name="attemptEightQuestionsFourthTest" />
+					<include name="attemptOneQuestionsFifthTest" />
+					<include name="attemptOneQuestionsFifthTest" />
+					<include name="attemptEightQuestionsFifthTest" />
 					<include name="attemptOneQuestionsSixthTest" />
+					<include name="attemptTwouestionsSixthTest" />
 					<include name="attemptEightQuestionsSixthTest" />
 				</methods>
 			</class>
