@@ -56,6 +56,7 @@ public class BaseLib {
 	
    @AfterMethod
    public void postCondition()throws Exception{
+	   driver.getSession()
 	driver.quit();
 		System.out.println("browser closed");
 	}
