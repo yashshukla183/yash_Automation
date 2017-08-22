@@ -8,6 +8,14 @@
 				<methods>
 					<include name="openQuizPluginMain" />
 					<include name="SelectTopicAndLoadTests" />
+					<include name="AttemptAndSubmitFirstTest" />
+					<include name="attemptOneQuestionsFirstTest" />
+					<include name="attemptTwoQuestionsFirstTest" />
+					<include name="attemptEightQuestionsFirstTest" />
+					<include name="testSubmissionWithoutAnswer" />
+					<include name="attemptOneQuestionsSecondTest" />
+					<include name="attemptTwoQuestionsSecondTest" />
+					<include name="attemptThreeQuestionsSecondTest" />
 					
 					
 				</methods>
