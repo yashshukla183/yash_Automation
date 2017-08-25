@@ -292,7 +292,7 @@ public class QuizpluginTest extends BaseLib {
 	}
 
 	@Test(priority=8)
-	public void testSubmissionWithoutAnswer() {
+	public void testSubmissionWithoutAnswer() throws InterruptedException {
 		QuizpluginBase reachtest = new QuizpluginBase(driver);
 		reachtest.reachTest();
 		try {
