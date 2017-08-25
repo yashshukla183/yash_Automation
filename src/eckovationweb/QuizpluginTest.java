@@ -300,6 +300,7 @@ public class QuizpluginTest extends BaseLib {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		Thread.sleep(5000);
 		driver.findElements(By.className("footer-btn")).get(0).click();
 		WebElement submitModal = driver.findElements(By.className("modal-content")).get(0);
 		System.out.println("submit modal found");
