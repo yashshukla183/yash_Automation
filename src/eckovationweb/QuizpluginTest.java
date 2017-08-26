@@ -293,19 +293,31 @@ public class QuizpluginTest extends BaseLib {
 
 	@Test(priority=8)
 	public void testSubmissionWithoutAnswer() throws InterruptedException {
-		QuizpluginBase reachtest = new QuizpluginBase(driver);
-		reachtest.reachTest();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		System.out.println("perform test 1");
+		SignInBase signinbase = new SignInBase(driver);
+		signinbase.clearDataAndReachTillOtp(signinbase.CORRECT_OTP);
+		QuizpluginBase quizbase = new QuizpluginBase(driver);
+		quizbase.enterGroupCodeAndOpenQuiz();
+		Thread.sleep(2000);
+		for (String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
 		}
+		driver.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[2]/div/button/div[2]/h2"))
+		.click();
+		Assert.assertEquals(driver.findElements(By.className("sub-topic-panel")).size(), 6);
+		driver.findElement(By.xpath("//*[@id=\"page-content-wrapper\"]/div[3]/div/div/div[3]/div/div[2]/button"))
+		.click();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		System.out.println(driver.getPageSource());
+		String firstQuestionText = driver.findElements(By.className("question-text")).get(0).getText();
+		System.out.println(firstQuestionText);
 		Thread.sleep(5000);
 		driver.findElements(By.className("footer-btn")).get(0).click();
 		WebElement submitModal = driver.findElements(By.className("modal-content")).get(0);
 		System.out.println("submit modal found");
 		submitModal.findElements(By.className("btn-primary")).get(0).click();
 		Assert.assertEquals(driver.findElements(By.className("alert-warning")).get(0).getText(), "Error Error at submitting test! please try again");
+
 	}
 
 
