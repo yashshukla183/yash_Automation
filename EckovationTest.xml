@@ -6,7 +6,7 @@
 			<class name="eckovationweb.QuizpluginTest">
 				<parameter name="browser" value="browserstack" />
 				<methods>
-					<include name="startFirstTest" />
+					<include name="testSubmissionWithoutAnswer" />
 				</methods>
 			</class>
 		</classes>
